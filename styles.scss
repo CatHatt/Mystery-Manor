@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (width <= 600px) {
+    .hero {
+        height: 70lvh !important;
+    }
+    .carpet-container {
+        flex-direction: column !important;
+    }
+}
+
+.parallax {
+    height: 100dvh;
+    perspective: 100px;
+    -webkit-perspective: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%;
+}
+
+.parallax-section,
+.parallax-section::before,
+.parallax-section::after {
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.hero {
+    height: 100lvh;
+    box-shadow: 0 0 100px #00000080;
+    overflow: hidden;
+}
+
+.parallax-layer,
+.parallax-layer::before,
+.parallax-layer::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform-origin-x: 100%;
+    transform-origin-x: 100%;
+}
+
+.parallax-back,
+.parallax-back::before,
+.parallax-back::after {
+    transform: translateZ(-100px) scale(2);
+    -webkit-transform: translateZ(-100px) scale(2);
+}
+
+.parallax-front,
+.parallax-front::before,
+.parallax-front::after {
+    transform: translateZ(100px) scale(0.5);
+    -webkit-transform: translateZ(100px) scale(0.5);
+}
+
+.plaque-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plaque {
+    width: 1125px;
+    max-width: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+    z-index: -2;
+    height: 100vh;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background: radial-gradient(#00000000 0%, #00000066 100%);
+    }
+
+    .background {
+        min-width: 100%;
+        min-height: 100%;
+        overflow: hidden;
+    }
+}
+
+.carpet-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.carpet {
+    width: 450px;
+    max-width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #00000080;
+    outline: #dfcb19 2px solid;
+    outline-offset: -20px;
+}
