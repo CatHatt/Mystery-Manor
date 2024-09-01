@@ -8,12 +8,16 @@
     }
 }
 
+body {
+    background: url('./public/dark_wood_2k.jpg');
+}
+
 @media (width <= 600px) {
     .parallax-back {
         &,
         &::before,
         &::after {
-            transform: translateZ(-100px) scale(2) translateY(-15dvh) !important;
+            transform: translateZ(-100px) scale(2) translateY(-7.5dvh) !important;
         }
     }
 
