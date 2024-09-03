@@ -1,0 +1,42 @@
+$width: 20%;
+
+* {
+    &,
+    &::before,
+    &::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+#meow {
+    position: absolute;
+    bottom: 0;
+    left: -1%;
+    animation: meowSlide 10s linear infinite alternate;
+}
+
+@keyframes meowSlide {
+    0% {
+        left: -1%;
+    }
+    100% {
+        left: 101% - $width;
+    }
+}
+
+@keyframes discSpin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
