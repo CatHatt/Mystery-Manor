@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/svg+xml" href="/public/meow.gif" />
+        <title>Meow</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="meow.scss"
+        />
+    </head>
+    <body>
+        <div class="audioContainer">
+            <audio autoplay id="audioPlayer"></audio>
+            <img
+                src="/public/disc.svg"
+                alt="A circular, animated icon, rotating clockwise, visually representing the continuous playback of audio content. The icon's motion suggests the dynamic nature of the music, symbolizing the ongoing flow of sound waves and the active state of the media player."
+                class="discIcon"
+                id="discIcon"
+            />
+            <h2 id="text">
+                <span style="animation-delay: 0ms" class="dot">L</span
+                ><span style="animation-delay: 100ms" class="dot">o</span
+                ><span style="animation-delay: 200ms" class="dot">a</span
+                ><span style="animation-delay: 300ms" class="dot">d</span
+                ><span style="animation-delay: 400ms" class="dot">i</span
+                ><span style="animation-delay: 500ms" class="dot">n</span
+                ><span style="animation-delay: 600ms" class="dot">g</span
+                ><span style="animation-delay: 700ms" class="dot">.</span
+                ><span style="animation-delay: 800ms" class="dot">.</span
+                ><span style="animation-delay: 900ms" class="dot">.</span>
+            </h2>
+        </div>
+        <img
+            src="/public/meow.gif"
+            alt="A cartoon cream-colored cat, depicted in a playful and animated style, is perched atop a sleek, gray robotic vacuum cleaner. The vacuum cleaner is in motion, its spinning brushes and rotating wheels creating a dynamic sense of energy. The cat maintains a relaxed and nonchalant posture, seemingly enjoying the unexpected ride."
+            id="meow"
+        />
+        <script src="meow.ts"></script>
+    </body>
+</html>
