@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('/navbar.scss');
+
+* {
+    &,
+    &::before,
+    &::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+body {
+    background: url('./public/dark_wood_2k.jpg');
+    color: white;
+    font-family: 'Playfair Display', cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+@property --first {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --last {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+#loading-screen {
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) var(--first),
+        rgba(0, 0, 0, 1) var(--last)
+    );
+    &.fadeOut {
+        pointer-events: none;
+        animation: fadeOut 1s linear forwards;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        --first: -100%;
+        --last: 0%;
+    }
+    100% {
+        --first: 100%;
+        --last: 200%;
+    }
+}
+
+#parallax {
+    perspective: 100px;
+    width: 100%;
+    height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.parallax-section {
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.parallax-layer {
+    &,
+    &::before,
+    &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+.parallax-back {
+    &,
+    &::before,
+    &::after {
+        transform: translateZ(-100px) scale(2);
+    }
+}
+
+.hero {
+    height: 100dvh;
+
+    .background {
+        width: 110%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .plaque-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .plaque {
+            max-width: 90%;
+            max-height: 90%;
+            width: 1500px;
+        }
+    }
+}
+
+.info {
+    height: min-content;
+    box-shadow: 0 0 100px black;
+    background: url('./public/dark_wood_2k.jpg');
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(#00000000, #00000080);
+    }
+
+    .carpet-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 5%;
+        align-items: stretch;
+        justify-content: center;
+
+        .carpet {
+            background: url('./public/casino_carpet_1k.jpg');
+            width: 400px;
+            max-width: 100%;
+            //height: 100%;
+            box-shadow: 0 0 50px #00000080;
+            position: relative;
+            $outline-offset: 20px;
+            padding: $outline-offset * 2 $outline-offset;
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 2px;
+                background: gold;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+            }
+            &::before {
+                left: $outline-offset;
+            }
+            &::after {
+                right: $outline-offset;
+            }
+
+            .image {
+                width: 100%;
+                aspect-ratio: 4/3;
+                object-fit: cover;
+            }
+
+            .text-container {
+                padding: 20px;
+                margin: 20px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                background: url('/public/dark_wood_2k.jpg');
+                background-size: 75%;
+                color: gold;
+                outline: rgb(61, 23, 23) 5px solid;
+                outline-offset: -20px;
+                box-shadow: 0 0 20px black;
+                .header {
+                    font-size: 2rem;
+                }
+                .text {
+                }
+            }
+        }
+    }
+}
+
+@media (width <= 600px) {
+    .hero {
+        height: 70dvh !important;
+        .background {
+            transform: translateZ(-100px) scale(2) translateY(-7.5dvh);
+        }
+    }
+}
+
+@media (width <= 700px) {
+    .info {
+        .carpet-container {
+            flex-direction: column;
+            gap: 25px;
+            .carpet {
+                width: 90%;
+            }
+        }
+    }
+}
