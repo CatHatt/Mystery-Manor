@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     z-index: 1;
-    overflow: hidden;
+    overflow: visible;
     pointer-events: none;
     #navbar {
         background: url('/public/dark_wood_2k.jpg');
@@ -15,6 +15,7 @@
         width: 90%;
         height: 100%;
         position: relative;
+        box-shadow: 0 0 20px black;
 
         &::before {
             content: '';
