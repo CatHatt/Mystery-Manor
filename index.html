@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/Escape Room Logo.svg" />
+        <link rel="icon" type="image/svg+xml" href="/public/logo-min.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/index.scss" />
         <title>Mystery Manor - Home</title>
@@ -10,7 +10,21 @@
     </head>
     <body>
         <div id="loading-screen"></div>
-        <div id="navbar-container"><nav id="navbar"></nav></div>
+        <div id="navbar-container">
+            <nav id="navbar">
+                <div class="left">
+                    <a href="/" class="logo">
+                        <img
+                            src="/public/logo.svg"
+                            alt="The logo for Mystery Manor"
+                        />
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="/boka/" class="link">Boka </a>
+                </div>
+            </nav>
+        </div>
         <div id="parallax">
             <section class="parallax-section hero">
                 <img
@@ -19,7 +33,7 @@
                 />
                 <div class="parallax-layer plaque-container">
                     <embed
-                        src="./plaque.svg"
+                        src="/public/plaque.svg"
                         type="image/svg+xml"
                         class="plaque"
                     />

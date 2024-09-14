@@ -8,25 +8,68 @@
     justify-content: center;
     z-index: 1;
     overflow: visible;
-    pointer-events: none;
+    //pointer-events: none;
     #navbar {
+        $outline-offset: 10px;
         background: url('/public/dark_wood_2k.jpg');
         background-size: 50%;
         width: 90%;
         height: 100%;
         position: relative;
         box-shadow: 0 0 20px black;
+        display: flex;
+        justify-content: space-between;
+        $padding: 10px;
+        padding: $outline-offset + $padding;
+        padding-top: $padding;
 
         &::before {
             content: '';
             mix-blend-mode: difference;
             outline: hsla(17, 62%, 26%, 0.4) solid 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
             height: 200%;
             display: block;
-            outline-offset: -10px;
+            outline-offset: -$outline-offset;
             position: absolute;
             top: -100%;
+            pointer-events: none;
+        }
+
+        .left,
+        .right {
+            height: 100%;
+            & > * {
+                display: block;
+            }
+            .logo {
+                height: 100%;
+                background: none;
+                border: none;
+                img {
+                    height: 100%;
+                }
+            }
+            .link {
+                color: white;
+                text-decoration: none;
+                height: calc(100% + $padding);
+                position: relative;
+                top: $padding;
+                background: url('/public/casino_carpet_1k.jpg');
+                clip-path: polygon(
+                    0 -100%,
+                    0 100%,
+                    50% 50%,
+                    100% 100%,
+                    100% -100%
+                );
+                padding: $padding;
+                overflow: scroll;
+            }
         }
     }
 }
