@@ -57,6 +57,43 @@
                 }
             }
             .link {
+                $hover-brightness: 120%;
+                $round-3d: 3px;
+
+                @keyframes hover-in {
+                    0% {
+                        box-shadow: 0 0 10px black;
+                        filter: brightness(100%);
+                    }
+                    50% {
+                        box-shadow: 0 0 0px black;
+                    }
+                    50% {
+                        box-shadow: 0 0 0px black inset;
+                    }
+                    100% {
+                        box-shadow: 0 0 10px black inset;
+                        filter: brightness($hover-brightness);
+                    }
+                }
+
+                @keyframes hover-out {
+                    0% {
+                        box-shadow: 0 0 10px black inset;
+                        filter: brightness($hover-brightness);
+                    }
+                    50% {
+                        box-shadow: 0 0 0px black inset;
+                    }
+                    50% {
+                        box-shadow: 0 0 0px black;
+                    }
+                    100% {
+                        box-shadow: 0 0 10px black;
+                        filter: brightness(100%);
+                    }
+                }
+
                 font-size: 1.5rem;
                 color: white;
                 text-decoration: none;
@@ -67,14 +104,12 @@
                 display: flex;
                 align-items: center;
                 box-shadow: 0 0 10px black;
-                //text-shadow: 0 0 5px wheat;
-                animation: slide-out 0.2s both ease-in-out;
                 position: relative;
-                $round-3d: 7px;
+                animation: hover-out 0.2s both ease-in-out;
                 border-radius: $round-3d;
 
                 &:hover {
-                    animation: slide-in 0.2s both ease-in-out;
+                    animation: hover-in 0.2s both ease-in-out;
                 }
 
                 &::before {
@@ -104,41 +139,10 @@
                 &.main {
                     background: url('/public/casino_carpet_1k.jpg');
                     &::before {
-                        mix-blend-mode: normal;
                         outline: none;
                     }
                 }
             }
         }
-    }
-}
-
-@keyframes slide-in {
-    0% {
-        box-shadow: 0 0 10px black;
-    }
-    50% {
-        box-shadow: 0 0 0px black;
-    }
-    50% {
-        box-shadow: 0 0 0px black inset;
-    }
-    100% {
-        box-shadow: 0 0 10px black inset;
-    }
-}
-
-@keyframes slide-out {
-    0% {
-        box-shadow: 0 0 10px black inset;
-    }
-    50% {
-        box-shadow: 0 0 0px black inset;
-    }
-    50% {
-        box-shadow: 0 0 0px black;
-    }
-    100% {
-        box-shadow: 0 0 10px black;
     }
 }
