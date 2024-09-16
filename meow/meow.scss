@@ -33,15 +33,17 @@ body {
         animation: discSpin 5s linear infinite;
         cursor: pointer;
     }
-    #text > span.letter {
-        display: inline-block;
-        animation: float 3s ease-in-out infinite,
-            rainbow 10s linear infinite backwards,
-            slideIn 1s ease-out backwards 0s;
-    }
-    #text > span.dot {
-        display: inline-block;
-        animation: float 3s ease-in-out infinite backwards;
+    #text {
+        .letter {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite,
+                rainbow 10s linear infinite backwards,
+                slideIn 1s ease-out backwards 0s;
+        }
+        .dot {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite backwards;
+        }
     }
 }
 
