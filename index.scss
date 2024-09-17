@@ -44,6 +44,10 @@
     }
 }
 
+.hide {
+    filter: opacity(0);
+}
+
 #parallax {
     perspective: 100px;
     width: 100%;
