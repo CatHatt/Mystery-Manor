@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('/navbar.scss');
+
+* {
+    &,
+    &::before,
+    &::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+body {
+    background: url('./public/dark_wood_2k.jpg');
+    color: white;
+    font-family: 'Playfair Display', cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}

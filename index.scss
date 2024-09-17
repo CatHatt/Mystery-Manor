@@ -1,24 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('/navbar.scss');
-
-* {
-    &,
-    &::before,
-    &::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-}
-
-body {
-    background: url('./public/dark_wood_2k.jpg');
-    color: white;
-    font-family: 'Playfair Display', cursive;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-}
+@import url('/boilerplate.scss');
 
 @property --first {
     syntax: '<percentage>';
@@ -33,6 +13,20 @@ body {
 }
 
 #loading-screen {
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) var(--first),
+        rgba(0, 0, 0, 1) var(--last)
+    );
+
     @keyframes fadeOut {
         0% {
             --first: -100%;
@@ -43,23 +37,6 @@ body {
             --last: 200%;
         }
     }
-
-    width: 100dvw;
-    height: 100dvh;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    background: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 0) var(--first),
-        rgba(0, 0, 0, 1) var(--last)
-    );
 
     &.fadeOut {
         pointer-events: none;
@@ -87,10 +64,7 @@ body {
     &::before,
     &::after {
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset: 0;
         margin: auto;
     }
 }
@@ -193,18 +167,33 @@ body {
                 text-align: center;
                 background: url('/public/dark_wood_2k.jpg');
                 background-size: 75%;
-                color: gold;
-                outline: rgb(61, 23, 23) 5px solid;
-                outline-offset: -20px;
                 box-shadow: 0 0 20px black;
+                position: relative;
+                height: 100%;
+                gap: 10px;
+
+                &::before {
+                    content: '';
+                    outline: hsla(17, 62%, 26%, 0.4) solid 5px;
+                    outline-offset: -15px;
+                    mix-blend-mode: difference;
+                    position: absolute;
+                    inset: 0;
+                }
+
                 .header {
                     font-size: 2rem;
+                    color: gold;
                 }
                 .text {
                 }
             }
         }
     }
+}
+
+.riddle {
+    height: 100dvh;
 }
 
 @media (width <= 600px) {
