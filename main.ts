@@ -10,5 +10,5 @@ window.addEventListener('load', () => {
 })
 
 navbarContainer.addEventListener('wheel', (event) => {
-    parallax.scrollTop += event.deltaY * 10
+    parallax.scrollTop += event.deltaY * 3
 })
