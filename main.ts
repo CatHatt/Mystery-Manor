@@ -22,8 +22,6 @@ document.body.addEventListener('mousemove', updateCircleMask)
 function updateCircleMask(event: MouseEvent | unknown) {
     if (!(event instanceof MouseEvent)) return updateCircleMask(savedMouse)
 
-    console.log('aaa')
-
     const xPos = event.x - riddleSection.getBoundingClientRect().x
     const yPos = event.y - riddleSection.getBoundingClientRect().y
 
