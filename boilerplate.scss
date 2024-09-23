@@ -16,6 +16,18 @@ body {
     color: white;
     font-family: 'Playfair Display', cursive;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: 400;
     font-style: normal;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.gold {
+    color: gold;
+}
+
+.italic {
+    font-style: italic;
 }
