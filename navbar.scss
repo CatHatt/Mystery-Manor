@@ -53,13 +53,11 @@
                 height: 100%;
                 background: none;
                 border: none;
-                filter: brightness(100%);
                 transition: all 0.2s ease-in-out;
 
                 img {
                     height: 100%;
                 }
-
                 &::before {
                     content: '';
                     position: absolute;
@@ -68,13 +66,8 @@
                     transition: all 0.2s ease-in-out;
                     z-index: -1;
                 }
-
-                &:hover {
-                    filter: brightness(120%);
-
-                    &::before {
-                        background: rgba(255, 255, 255, 0.1);
-                    }
+                &:hover::before {
+                    background: rgba(255, 255, 255, 0.1);
                 }
             }
             .link {
