@@ -45,13 +45,21 @@
                     <div class="carpet">
                         <img src="/public/family.jpg" alt="" class="image" />
                         <div class="text-container">
-                            <h1 class="header">Fun for the entire family</h1>
+                            <h1 class="header bold gold">
+                                Fun for the entire family
+                            </h1>
                             <p class="paragraph">
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Earum ipsum voluptate, illo
-                                dicta modi odit eius quia in corporis cupiditate
-                                qui officiis aspernatur velit facilis impedit
-                                dolor. Voluptatum, magni aliquid!
+                                Mystery Manor is the perfect escape room
+                                adventure for
+                                <span class="bold gold">families</span> of all
+                                ages! Solve puzzles, crack codes, and uncover
+                                hidden clues as you race against the clock to
+                                escape the mysterious manor. This
+                                <span class="bold gold"
+                                    >thrilling experience</span
+                                >
+                                is sure to create lasting memories for everyone
+                                involved.
                             </p>
                         </div>
                     </div>
@@ -62,39 +70,88 @@
                             class="image"
                         />
                         <div class="text-container">
-                            <h1 class="header">
+                            <h1 class="header bold gold">
                                 Uncover mysteries of a far gone past
                             </h1>
                             <p class="paragraph">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Animi ducimus necessitatibus
-                                aspernatur error, officiis repellendus esse eum
-                                beatae, tenetur asperiores sed! Sequi numquam
-                                assumenda nobis molestias distinctio dolore
-                                sapiente ipsam?
+                                Mystery Manor takes you on a journey through
+                                time, inviting you to delve into the secrets and
+                                <span class="bold gold">mysteries</span> of a
+                                bygone era. As you explore the manor's hidden
+                                corners, you'll uncover clues that will
+                                transport you back in time. Can you solve the
+                                <span class="bold gold">puzzles</span> and
+                                escape before it's too late?
                             </p>
                         </div>
                     </div>
                     <div class="carpet">
                         <img src="/public/trinkets.jpg" alt="" class="image" />
                         <div class="text-container">
-                            <h1 class="header">
+                            <h1 class="header bold gold">
                                 Find the treasure <br />
                                 Get a free toy
                             </h1>
                             <p class="paragraph">
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Quae laudantium iure cum
-                                laborum! Architecto cumque molestiae
-                                consequatur, ipsa officiis nostrum doloribus
-                                beatae. Est cum doloremque minus vel
-                                perspiciatis labore assumenda.
+                                Are you a true adventurer? Mystery Manor hides a
+                                <span class="bold gold">secret treasure</span>
+                                waiting to be discovered. If you can crack the
+                                codes, solve the puzzles, and find the hidden
+                                prize, you'll be rewarded with a special
+                                surprise. But remember, only the most cunning
+                                and clever will be able to claim the
+                                <span class="bold gold">prize</span>.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="parallax-section riddle"></section>
+            <section class="parallax-section riddle">
+                <h1 class="header">
+                    In stillness I dwell, no claws to bear,<br />
+                    A hug in the night, but never a scare.<br />
+                    What am I?
+                </h1>
+                <img
+                    class="parallax-layer parallax-back background"
+                    src="/public/casino_carpet_1k.jpg"
+                />
+                <div class="wall top">
+                    <img src="/public/dark_wood_2k_rotated.jpg" />
+                </div>
+                <div class="wall bottom">
+                    <img src="/public/dark_wood_2k_rotated.jpg" />
+                </div>
+                <div class="wall left">
+                    <img src="/public/dark_wood_2k.jpg" />
+                </div>
+                <div class="wall right">
+                    <img src="/public/dark_wood_2k.jpg" />
+                </div>
+                <svg id="dark-layer" class="parallax-layer">
+                    <defs>
+                        <radialGradient id="gradient">
+                            <stop stop-color="#000000" offset="60%" />
+                            <stop stop-color="#ffffff" offset="100%" />
+                        </radialGradient>
+                        <mask id="mask">
+                            <rect width="100%" height="100%" fill="white" />
+                            <circle
+                                cx="50%"
+                                cy="50%"
+                                fill="url(#gradient)"
+                                id="mask-circle"
+                            />
+                        </mask>
+                    </defs>
+                    <rect
+                        width="100%"
+                        height="100%"
+                        fill="#000000b0"
+                        mask="url(#mask)"
+                    />
+                </svg>
+            </section>
         </main>
     </body>
 </html>
