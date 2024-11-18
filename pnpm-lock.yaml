@@ -6,11 +6,11 @@ settings:
 
 devDependencies:
   sass:
-    specifier: ^1.80.6
-    version: 1.80.6
+    specifier: ^1.80.7
+    version: 1.80.7
   vite:
     specifier: ^5.4.1
-    version: 5.4.10(sass@1.80.6)
+    version: 5.4.10(sass@1.80.7)
 
 packages:
 
@@ -584,8 +584,8 @@ packages:
     dev: true
     optional: true
 
-  /immutable@4.3.7:
-    resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
+  /immutable@5.0.2:
+    resolution: {integrity: sha512-1NU7hWZDkV7hJ4PJ9dur9gTNQ4ePNPN4k9/0YhwjzykTi/+3Q5pF93YU5QoVj8BuOnhLgaY8gs0U2pj4kSYVcw==}
     dev: true
 
   /is-extglob@2.1.1:
@@ -686,13 +686,13 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass@1.80.6:
-    resolution: {integrity: sha512-ccZgdHNiBF1NHBsWvacvT5rju3y1d/Eu+8Ex6c21nHp2lZGLBEtuwc415QfiI1PJa1TpCo3iXwwSRjRpn2Ckjg==}
+  /sass@1.80.7:
+    resolution: {integrity: sha512-MVWvN0u5meytrSjsU7AWsbhoXi1sc58zADXFllfZzbsBT1GHjjar6JwBINYPRrkx/zqnQ6uqbQuHgE95O+C+eQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 4.0.1
-      immutable: 4.3.7
+      immutable: 5.0.2
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.0
@@ -712,7 +712,7 @@ packages:
     dev: true
     optional: true
 
-  /vite@5.4.10(sass@1.80.6):
+  /vite@5.4.10(sass@1.80.7):
     resolution: {integrity: sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -746,7 +746,7 @@ packages:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.24.4
-      sass: 1.80.6
+      sass: 1.80.7
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
