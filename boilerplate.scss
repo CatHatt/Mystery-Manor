@@ -31,3 +31,47 @@ body {
 .italic {
     font-style: italic;
 }
+
+@property --first {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --last {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+#loading-screen {
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) var(--first),
+        rgba(0, 0, 0, 1) var(--last)
+    );
+
+    @keyframes fadeOut {
+        0% {
+            --first: -100%;
+            --last: 0%;
+        }
+        100% {
+            --first: 100%;
+            --last: 200%;
+        }
+    }
+
+    &.fadeOut {
+        pointer-events: none;
+        animation: fadeOut 1s linear forwards;
+    }
+}

@@ -1,1 +1,182 @@
 @import url('/boilerplate.scss');
+
+$perspective: 1000px;
+$spacer-size: 50px;
+
+body {
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    translate: -50%;
+    z-index: 1;
+    .lights {
+        display: flex;
+        gap: 5px;
+        .light-container {
+            position: relative;
+            height: 50px;
+            aspect-ratio: 1;
+            .light-background {
+                border-radius: 10000px;
+                height: 100%;
+                position: absolute;
+                inset: 0;
+                box-shadow: 0 0 10px #00000080;
+            }
+            .light {
+                border-radius: 10000px;
+                aspect-ratio: 1;
+                background: #363636;
+                position: absolute;
+                inset: 7px;
+                overflow: hidden;
+                box-shadow: 3px -3px 10px #00000080 inset;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 3px 3px auto auto;
+                    background: white;
+                    width: 15px;
+                    aspect-ratio: 1;
+                    border-radius: 10000px;
+                    filter: blur(5px);
+                }
+            }
+            &.active {
+                .light {
+                    background: #f3db04;
+                    box-shadow: 0 0 5px #f3db04;
+                }
+            }
+        }
+    }
+}
+
+#parallax {
+    perspective: $perspective;
+    width: 100%;
+    height: 100dvh;
+    scroll-behavior: smooth;
+}
+
+.parallax-section {
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: -1;
+    width: 100dvw;
+    height: 100dvh;
+    flex: 0 0 auto;
+}
+
+@property --part {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    translate: calc(calc(-100dvw - $spacer-size) * var(--part));
+    transition: translate 0.5s ease;
+}
+
+.spacer {
+    width: $spacer-size;
+}
+
+.parallax-layer {
+    &,
+    &::before,
+    &::after {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+    }
+}
+
+.parallax-back {
+    &,
+    &::before,
+    &::after {
+        translate: 0 0 calc($perspective * -1);
+        scale: 2;
+    }
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    translate: 0 0 calc($perspective/-4);
+    scale: initial;
+    user-select: none;
+}
+
+.wall {
+    inset: 0;
+    position: absolute;
+    overflow: hidden;
+    user-select: none;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &.top,
+    &.right {
+        translate: 0 0 calc($perspective/-4);
+    }
+    &.top,
+    &.bottom {
+        width: 100%;
+        height: calc($perspective/4);
+        rotate: x 90deg;
+    }
+    &.top {
+        transform-origin: center top;
+        bottom: initial;
+    }
+    &.bottom {
+        transform-origin: center bottom;
+        top: initial;
+    }
+    &.left,
+    &.right {
+        width: calc($perspective/4);
+        height: 100%;
+        rotate: y 90deg;
+    }
+    &.left {
+        transform-origin: left center;
+        right: initial;
+    }
+    &.right {
+        transform-origin: right center;
+        left: initial;
+    }
+}
+
+#dark-layer {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    #mask-circle {
+        $move-duration: 0.1s;
+        $scale-duration: 0.5s;
+        transition: cx $move-duration ease-out, cy $move-duration ease-out,
+            r $scale-duration cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        r: 0px;
+    }
+}
+
+main:hover #dark-layer #mask-circle {
+    r: 70%;
+}

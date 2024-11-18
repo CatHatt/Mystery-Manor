@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="book.scss" />
         <title>Mystery Manor - Book</title>
-        <script src="book.ts"></script>
+        <script src="book.ts" defer></script>
     </head>
     <body>
         <div id="loading-screen"></div>
@@ -25,5 +25,127 @@
                 </div>
             </nav>
         </div>
+        <div class="progress-bar">
+            <div class="back"></div>
+            <div class="lights">
+                <div class="light-container active">
+                    <img
+                        src="/public/dark_wood_2k.jpg"
+                        class="light-background"
+                    />
+                    <div class="light"></div>
+                </div>
+                <div class="light-container">
+                    <img
+                        src="/public/dark_wood_2k.jpg"
+                        class="light-background"
+                    />
+                    <div class="light"></div>
+                </div>
+            </div>
+            <div class="forward"></div>
+        </div>
+        <main id="parallax">
+            <div class="container parallax-section" id="container">
+                <section class="parallax-section">
+                    <img
+                        class="parallax-layer parallax-back background"
+                        src="/public/casino_carpet_1k.jpg"
+                    />
+                    <div class="wall top">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall bottom">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall left">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                    <div class="wall right">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                </section>
+                <img class="spacer" src="/public/dark_wood_2k.jpg" />
+                <section class="parallax-section">
+                    <img
+                        class="parallax-layer parallax-back background"
+                        src="/public/casino_carpet_1k.jpg"
+                    />
+                    <div class="wall top">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall bottom">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall left">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                    <div class="wall right">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                </section>
+                <img class="spacer" src="/public/dark_wood_2k.jpg" />
+                <section class="parallax-section">
+                    <img
+                        class="parallax-layer parallax-back background"
+                        src="/public/casino_carpet_1k.jpg"
+                    />
+                    <div class="wall top">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall bottom">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall left">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                    <div class="wall right">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                </section>
+                <img class="spacer" src="/public/dark_wood_2k.jpg" />
+                <section class="parallax-section">
+                    <img
+                        class="parallax-layer parallax-back background"
+                        src="/public/casino_carpet_1k.jpg"
+                    />
+                    <div class="wall top">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall bottom">
+                        <img src="/public/dark_wood_2k_rotated.jpg" />
+                    </div>
+                    <div class="wall left">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                    <div class="wall right">
+                        <img src="/public/dark_wood_2k.jpg" />
+                    </div>
+                </section>
+            </div>
+            <svg id="dark-layer" class="parallax-layer">
+                <defs>
+                    <radialGradient id="gradient">
+                        <stop stop-color="#000000" offset="60%" />
+                        <stop stop-color="#ffffff" offset="100%" />
+                    </radialGradient>
+                    <mask id="mask">
+                        <rect width="100%" height="100%" fill="white" />
+                        <circle
+                            cx="50%"
+                            cy="50%"
+                            fill="url(#gradient)"
+                            id="mask-circle"
+                        />
+                    </mask>
+                </defs>
+                <rect
+                    width="100%"
+                    height="100%"
+                    fill="#0000007d"
+                    mask="url(#mask)"
+                />
+            </svg>
+        </main>
     </body>
 </html>
