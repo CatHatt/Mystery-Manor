@@ -1,15 +1,16 @@
 const loadingScreen = document.querySelector('#loading-screen')!
-const navbarContainer = document.querySelector(
-    '#navbar-container'
-) as HTMLDivElement
-const main = document.querySelector('#parallax')! as HTMLElement
 const maskCircle = document.querySelector('#mask-circle') as SVGCircleElement
 const container = document.querySelector('#container') as HTMLDivElement
 
 let savedMouse: MouseEvent = new MouseEvent('')
 
 let currentPart = 0
-const maxPart = 3
+
+// Kollar hur många element som finns i #container elementet för att säga hur många delar man ska kunna bläddra mellan
+const maxPart =
+    Array.from(container.children).filter(
+        (child) => (child as HTMLElement).tagName == 'SECTION'
+    ).length - 1
 
 window.addEventListener('load', () => {
     loadingScreen.classList.add('fadeOut')
@@ -53,8 +54,6 @@ document.addEventListener('keydown', (event) => {
     if (!keys.includes(event.key)) return
 
     functions[keys.indexOf(event.key)]()
-
-    container.style.setProperty('--part', currentPart.toString())
 })
 
 function limit(num: number, min: number, max: number = Infinity) {
@@ -71,4 +70,8 @@ function goToPage(pageNumber: number) {
     updatePage()
 }
 
-function updatePage() {}
+function updatePage() {
+    container.style.setProperty('--part', currentPart.toString())
+}
+
+function setLocation() {}
