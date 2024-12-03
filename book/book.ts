@@ -16,6 +16,12 @@ window.addEventListener('load', () => {
     loadingScreen.classList.add('fadeOut')
 })
 
+type SelectionTypes = { location: string | null }
+
+const selection: SelectionTypes = {
+    location: null,
+}
+
 document.body.addEventListener('mousemove', updateCircleMask)
 
 function updateCircleMask(event: MouseEvent | unknown) {
@@ -74,4 +80,8 @@ function updatePage() {
     container.style.setProperty('--part', currentPart.toString())
 }
 
-function setLocation() {}
+// @ts-ignore
+function setLocation(location: string) {
+    selection.location = location
+    goToPage(1)
+}
