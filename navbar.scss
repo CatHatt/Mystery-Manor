@@ -148,6 +148,11 @@
                             outline: none;
                         }
                     }
+
+                    &.selected {
+                        filter: saturate(130%) brightness(80%) !important;
+                        box-shadow: 0 0 10px black;
+                    }
                 }
             }
         }
