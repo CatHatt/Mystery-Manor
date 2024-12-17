@@ -83,5 +83,8 @@ function updatePage() {
 // @ts-ignore
 function setLocation(location: string) {
     selection.location = location
+    console.log(location)
     goToPage(1)
 }
+
+;(window as any).setLocation = setLocation
