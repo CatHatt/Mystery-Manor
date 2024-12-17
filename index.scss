@@ -98,7 +98,7 @@ $perspective: 1000px;
             &::after {
                 content: '';
                 width: 2px;
-                background: gold;
+                background: var(--gold);
                 height: 100%;
                 display: block;
                 position: absolute;
@@ -166,7 +166,7 @@ $perspective: 1000px;
             text-align: center;
             text-shadow: 0 0 10px white;
             span.gold {
-                text-shadow: 0 0 10px gold;
+                text-shadow: 0 0 10px var(--gold);
             }
         }
         .header {

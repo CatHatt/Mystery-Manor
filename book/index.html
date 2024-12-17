@@ -6,23 +6,25 @@
         <link rel="icon" type="image/svg+xml" href="/public/logo-min.svg" />
         <link rel="stylesheet" href="book.scss" />
         <title>Mystery Manor - Book</title>
-        <script src="book.ts" defer></script>
+        <script src="./book.ts" defer type="module"></script>
     </head>
     <body>
         <div id="loading-screen"></div>
         <div id="navbar-container">
             <nav id="navbar">
-                <div class="left">
-                    <a href="/" class="logo">
-                        <img
-                            src="/public/logo.svg"
-                            alt="The logo for Mystery Manor"
-                        />
-                    </a>
-                </div>
-                <div class="right">
-                    <a href="/meow/" class="link">Meow</a>
-                    <a href="/book/" class="link main">Book</a>
+                <div class="wrapper">
+                    <div class="left">
+                        <a href="/" class="logo">
+                            <img
+                                src="/public/logo.svg"
+                                alt="The logo for Mystery Manor"
+                            />
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="/meow/" class="link">Meow</a>
+                        <a href="/book/" class="link main">Book</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -77,7 +79,7 @@
                             >
                                 <img
                                     src="/public/stockholm.jpg"
-                                    alt="Stockholm"
+                                    alt="Image of Stockholm"
                                 />
                                 <h2>Stockholm</h2>
                             </button>
@@ -87,12 +89,15 @@
                             >
                                 <img
                                     src="/public/gothenburg.jpg"
-                                    alt="Gothenburg"
+                                    alt="Image of Gothenburg"
                                 />
                                 <h2>Gothenburg</h2>
                             </button>
                             <button class="card" onclick="setLocation('Malmö')">
-                                <img src="/public/malmö.jpg" alt="Malmö" />
+                                <img
+                                    src="/public/malmö.jpg"
+                                    alt="Image of Malmö"
+                                />
                                 <h2>Malmö</h2>
                             </button>
                         </div>
