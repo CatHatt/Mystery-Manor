@@ -1,1 +1,17 @@
 @import url('/boilerplate.scss');
+
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/public/casino_carpet_1k.jpg');
+    width: 100dvw;
+    height: 100dvh;
+    main {
+        width: 500px;
+        height: 300px;
+        box-shadow: 0 0 20px black;
+        background: url('/public/dark_wood_2k.jpg');
+        background-size: 1000px;
+    }
+}
